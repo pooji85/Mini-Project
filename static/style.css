@@ -1,0 +1,151 @@
+/* 🌆 General Styling */
+body {
+    background-image: url('heart.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #f5f5f5;
+}
+
+/* 🧩 Main Container */
+.container {
+    background: rgba(40, 44, 52, 0.75);
+    border-radius: 20px;
+    padding: 30px;
+    margin: 60px auto;
+    width: 85%;
+    max-width: 1000px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(6px);
+    transition: all 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-3px);
+}
+
+/* ⚙️ Grid Layout */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    align-items: flex-start;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* 📝 Form Styling */
+.form-group {
+    margin-bottom: 12px;
+}
+
+label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 6px;
+    color: #e0e0e0;
+}
+
+/* 🧾 Uniform Input Field Sizes */
+input,
+select {
+    width: 100%;
+    min-height: 45px; /* Consistent height for all inputs */
+    padding: 10px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    color: #f8f8f8;
+    font-size: 15px;
+    line-height: 1.4;
+    outline: none;
+    transition: border-color 0.3s ease, background 0.3s ease;
+    box-sizing: border-box;
+}
+
+/* Placeholder Styling */
+input::placeholder,
+select::placeholder {
+    color: #bfbfbf;
+    font-size: 15px;
+    opacity: 1;
+}
+
+input:focus,
+select:focus {
+    border-color: #4fa3ff;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* 💡 Buttons */
+button {
+    display: block;
+    width: 100%;
+    min-height: 45px; /* Match input height */
+    padding: 10px 0;
+    border: none;
+    border-radius: 8px;
+    background-color: #2f5073;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #1e3e5f;
+    transform: translateY(-2px);
+}
+
+/* 📊 Visualization Section */
+.visualization-section {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#gaugeChartContainer {
+    margin: 20px auto;
+    max-width: 250px;
+}
+
+/* 💬 Suggestions */
+#suggestions {
+    margin-top: 15px;
+    text-align: left;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 10px 15px;
+    font-size: 14px;
+    color: #dcdcdc;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .container {
+        width: 90%;
+        margin: 40px auto;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+}

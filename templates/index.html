@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Attack Risk Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Heart Attack Risk Assessment</h1>
+
+        <!-- Grid Layout -->
+        <div class="grid">
+            <!-- Form Section -->
+            <div class="form-section">
+                <form id="riskForm" onsubmit="event.preventDefault(); getPrediction();">
+                    <div class="form-group">
+                        <label for="age">Age:</label>
+                        <input type="number" id="age" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="sex">Sex:</label>
+                        <select id="sex">
+                            <option value="0">Female</option>
+                            <option value="1">Male</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="cholesterol">Cholesterol:</label>
+                        <input type="number" id="cholesterol" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="maxhr">Maximum Heart Rate:</label>
+                        <input type="number" id="maxhr" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="oldpeak">Oldpeak:</label>
+                        <input type="number" id="oldpeak" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="exerciseangina">Exercise Angina:</label>
+                        <select id="exerciseangina">
+                            <option value="0">No</option>
+                            <option value="1">Yes</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="chestpain">Chest Pain Type:</label>
+                        <select id="chestpain">
+                            <option value="0">Asymptomatic</option>
+                            <option value="1">Atypical Angina</option>
+                            <option value="2">Non-Anginal Pain</option>
+                            <option value="3">Typical Angina</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="st_slope">ST Slope:</label>
+                        <select id="st_slope">
+                            <option value="0">Down</option>
+                            <option value="1">Flat</option>
+                            <option value="2">Up</option>
+                        </select>
+                    </div>
+                    <button type="submit">Predict Risk</button>
+                </form>
+            </div>
+
+            <!-- Visualization Section -->
+            <div class="visualization-section">
+                <h3>Risk Prediction: <span id="predictionResult">-</span></h3>
+                <div id="gaugeChartContainer">
+                    <canvas id="gaugeChart" width="400" height="200"></canvas>
+                </div>
+                <h3>Suggestions:</h3>
+                <div id="suggestions"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
